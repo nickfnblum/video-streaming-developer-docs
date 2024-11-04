@@ -11,7 +11,7 @@ const links = [
     text: 'Channel API',
   },
   {
-    href: '/viewer-authentication-api-getting-started',
+    href: '/viewer-authentication-api-v2-getting-started',
     text: 'Viewer Authentication API',
   },
   {
@@ -22,20 +22,10 @@ const links = [
     href: '/analytics-api-getting-started',
     text: 'Analytics API',
   },
-  {
-    href: '/ecdn-api-overview',
-    text: 'ECDN API',
-  },
-  {
-    href: '/broadcaster-sdk',
-    text: 'Broadcaster SDK',
-  },
-  {
-    href: '/player-sdk',
-    text: 'Player SDK',
-  },
 ];
 
-const Custom404 = ({ location }) => <FourOhFour links={links} location={location} />;
+function Custom404({ location }) {
+  return <FourOhFour links={links} location={location} />;
+}
 
 export default Custom404;

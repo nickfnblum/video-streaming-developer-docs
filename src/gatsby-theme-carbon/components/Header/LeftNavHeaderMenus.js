@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'gatsby';
 import NavContext from 'gatsby-theme-carbon/src/util/context/NavContext';
-import { SideNavMenu, SideNavMenuItem } from 'carbon-components-react';
-import styles from 'gatsby-theme-carbon/src/components/LeftNav/LeftNav.module.scss';
+import { SideNavMenu, SideNavMenuItem } from '@carbon/react';
 import Content from './Content';
 
 const HeaderMenus = () => {
@@ -28,7 +27,7 @@ const HeaderMenus = () => {
               isActive={false}
               key={key}
             >
-              <span className={styles.linkText}>{subMenu.title}</span>
+              <span>{subMenu.title}</span>
             </SideNavMenuItem>
           ))}
         </SideNavMenu>

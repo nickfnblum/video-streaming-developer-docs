@@ -1,18 +1,19 @@
 import React from 'react';
-import { Button, Slider } from 'carbon-components-react';
-import { PauseFilled16, PlayFilledAlt16 } from '@carbon/icons-react';
+import { Button, Slider } from '@carbon/react';
+import { PauseFilled, PlayFilledAlt } from '@carbon/icons-react';
 import { SeekBar } from '../Modules/SeekBar';
 import * as styles from './index.module.scss';
 
-export const CustomControls = ({ onPlay, onPause, onSeek, onVolume, progress, duration, ready }) => {
+// eslint-disable-next-line import/prefer-default-export
+export function CustomControls({ onPlay, onPause, onSeek, onVolume, progress, duration, ready }) {
   return (
     <>
       <div className={styles.toolboxRow}>
         <div className={styles.nowrap}>
-          <Button onClick={onPlay} renderIcon={PlayFilledAlt16} disabled={!ready}>
+          <Button onClick={onPlay} renderIcon={PlayFilledAlt} size="md" disabled={!ready}>
             Play
           </Button>
-          <Button kind="secondary" renderIcon={PauseFilled16} onClick={onPause} disabled={!ready}>
+          <Button kind="secondary" renderIcon={PauseFilled} size="md" onClick={onPause} disabled={!ready}>
             Pause
           </Button>
         </div>
@@ -36,4 +37,4 @@ export const CustomControls = ({ onPlay, onPause, onSeek, onVolume, progress, du
       </div>
     </>
   );
-};
+}

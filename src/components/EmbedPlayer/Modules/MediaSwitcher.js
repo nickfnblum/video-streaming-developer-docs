@@ -1,19 +1,9 @@
 import React from 'react';
 import { Media } from './ExampleMedia';
 import imgIBM from '../../../images/example-channel-ibm.jpg';
-import imgNASA from '../../../images/example-channel-nasa.jpg';
-import imgTwit from '../../../images/example-channel-twit.png';
-import imgCreativeLive from '../../../images/example-channel-creativelive.png';
+import imgDemo from '../../../images/example-channel-demo.jpg';
 
 const medias = [
-  {
-    title: 'creativeLIVE',
-    type: 'channel',
-    id: 4307895,
-    description:
-      'creativeLIVE provides the best free, live creative education on the web. We offer high-quality workshops in photography, business, video, web and graphic design, and more.',
-    imgUrl: imgCreativeLive,
-  },
   {
     title: 'IBM @ CES',
     type: 'recorded',
@@ -22,25 +12,17 @@ const medias = [
     imgUrl: imgIBM,
   },
   {
-    title: 'TWiT Live',
+    title: 'Demo channel',
     type: 'channel',
-    id: 1524,
-    description:
-      'Live from the TWiT Brick House, non-stop technology news and conversation with Leo Laporte and friends.',
-    imgUrl: imgTwit,
-  },
-  {
-    title: 'NASA Public',
-    type: 'channel',
-    id: 6540154,
-    description:
-      'NASA TV airs a variety of regularly scheduled, pre-recorded educational and public relations programming 24 hours a day on its various channels.',
-    imgUrl: imgNASA,
+    id: 23935269,
+    description: 'Demo channel',
+    imgUrl: imgDemo,
   },
 ];
 
-export const MediaSwitcher = ({ onMediaChange }) => {
-  return medias.map((media) => (
+// eslint-disable-next-line import/prefer-default-export
+export const MediaSwitcher = ({ onMediaChange }) =>
+  medias.map((media) => (
     <Media
       title={media.title}
       type={media.type}
@@ -50,4 +32,3 @@ export const MediaSwitcher = ({ onMediaChange }) => {
       onClick={onMediaChange}
     />
   ));
-};

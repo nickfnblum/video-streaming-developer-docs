@@ -1,6 +1,6 @@
 import React from 'react';
-import { PauseFilled16, PlayFilledAlt16 } from '@carbon/icons-react';
-import { Button, Tag } from 'carbon-components-react';
+import { PauseFilled, PlayFilledAlt } from '@carbon/icons-react';
+import { Button, Tag } from '@carbon/react';
 import * as styles from './index.module.scss';
 
 const labels = [
@@ -10,24 +10,21 @@ const labels = [
   { name: 'ENDED', type: 'magenta' },
 ];
 
-export const BasicControls = ({ onPlay, onPause, ready, activeLabels }) => {
+// eslint-disable-next-line import/prefer-default-export
+export function BasicControls({ onPlay, onPause, ready, activeLabels }) {
   return (
     <div className={styles.toolboxRow}>
       <div>
-        <Button onClick={onPlay} renderIcon={PlayFilledAlt16} disabled={!ready}>
+        <Button onClick={onPlay} renderIcon={PlayFilledAlt} size="md" disabled={!ready}>
           Play
         </Button>
-        <Button kind="secondary" renderIcon={PauseFilled16} onClick={onPause} disabled={!ready}>
+        <Button kind="secondary" renderIcon={PauseFilled} size="md" onClick={onPause} disabled={!ready}>
           Pause
         </Button>
       </div>
       <div className={styles.labels}>
         {labels
-          .filter((label) =>
-            activeLabels.some((activeLabel) => {
-              return activeLabel === label.name;
-            }),
-          )
+          .filter((label) => activeLabels.some((activeLabel) => activeLabel === label.name))
           .map((label) => (
             <Tag key={label} type={label.type}>
               {label.name}
@@ -36,4 +33,4 @@ export const BasicControls = ({ onPlay, onPause, ready, activeLabels }) => {
       </div>
     </div>
   );
-};
+}

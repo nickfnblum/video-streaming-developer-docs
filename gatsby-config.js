@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'IBM Video Streaming Developers',
     description:
-      'Customize and control the viewing experience for your audience or create your own streaming applications, analyze engagement and telemetry data with the APIs and SDKs of the IBM Video Streaming platform.',
-    keywords: 'gatsby,video,video streaming,developer,developers,sdk,api,player,ios,android,broadcast',
+      'Customize and control the viewing experience for your audience or create your own streaming applications, analyze engagement and telemetry data with the APIs of the IBM Video Streaming platform.',
+    keywords: 'gatsby,video,video streaming,developer,developers,api,player,ios,android,broadcast',
   },
   plugins: [
     {
@@ -15,6 +15,7 @@ module.exports = {
         background_color: '#ffffff',
         theme_color: '#0062ff',
         display: 'browser',
+        icon: 'src/images/favicon.svg',
       },
     },
     {
@@ -25,6 +26,10 @@ module.exports = {
           baseUrl: 'https://github.com/IBM/video-streaming-developer-docs',
           subDirectory: '',
           branch: 'master',
+        },
+        theme: {
+          homepage: 'g10',
+          interior: 'g10',
         },
       },
     },

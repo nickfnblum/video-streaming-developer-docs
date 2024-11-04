@@ -1,21 +1,26 @@
 import React from 'react';
-import { HomepageBanner, HomepageCallout } from 'gatsby-theme-carbon';
+import { HomepageCallout } from 'gatsby-theme-carbon';
+import { HomepageBanner } from '../components/HomepageClone';
 import HomepageTemplate from './HomepageTemplate';
 
 import Carbon from '../../images/hero@2x.png';
 
-const FirstLeftText = () => <p>Developer Tools</p>;
-const FirstRightText = () => (
-  <p>
-    Control the viewing experience for your audience. Create your own streaming applications, customize interfaces,
-    analyze engagement and access telemetry data with the APIs and SDKs of the IBM Video Streaming platform.
-  </p>
-);
+function FirstLeftText() {
+  return <p>Developer Tools</p>;
+}
+function FirstRightText() {
+  return (
+    <p>
+      Control the viewing experience for your audience. Create your own streaming applications, customize interfaces,
+      analyze engagement and access telemetry data with the APIs of the IBM Video Streaming platform.
+    </p>
+  );
+}
 
 const customProps = {
   Banner: <HomepageBanner renderText={() => false} image={Carbon} />,
   FirstCallout: (
-    <HomepageCallout backgroundColor="#161616" color="white" leftText={FirstLeftText} rightText={FirstRightText} />
+    <HomepageCallout backgroundColor="#000000" color="white" leftText={FirstLeftText} rightText={FirstRightText} />
   ),
 };
 
